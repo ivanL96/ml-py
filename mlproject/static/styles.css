@@ -1,0 +1,24 @@
+
+/* .outer-container{
+    background-color: lightgrey
+} */
+
+nav{
+    background-color: seagreen !important
+}
+
+.main-block-left{
+    width: 200px;
+    height: 100%;
+    background-color: beige
+}
+
+.main-block{
+    padding: 100px 20px 10px; 
+    /* margin-left: 200px; */
+    height: 100%
+}
+
+.nlink{
+    color: midnightblue !important
+}

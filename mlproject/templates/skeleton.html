@@ -1,0 +1,53 @@
+{% load i18n static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+
+</head>
+<body>
+    <div class="outer-container">
+        {% block head %}
+            {% include "nav_bar.html" %}
+        {% endblock head %}
+
+        {% block left %}
+            {% include "side_nav.html" %}
+        {% endblock %}     
+        <div class="main-block">
+            {% block main %}
+
+            {% endblock %}        
+        </div>
+    </div>
+
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script src='{% static "csrf_ajax.js" %}'></script>
+    {% block additional_js %}
+        <script>
+            $(document).ready(function(){
+                $('.button-collapse').sideNav({
+                    menuWidth: 200, // Default is 300
+                    edge: 'left', // Choose the horizontal origin
+                    closeOnClick: false, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+                    draggable: true, // Choose whether you can drag to open on touch screens,
+                    onOpen: function(el) {  }, // A function to be called when sideNav is opened
+                    onClose: function(el) {  }, // A function to be called when sideNav is closed
+                  }
+                );
+            });
+        </script>
+    {% endblock additional_js %}
+</body>
+</html>
