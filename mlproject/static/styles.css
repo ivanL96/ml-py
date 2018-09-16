@@ -15,10 +15,14 @@ nav{
 
 .main-block{
     padding: 100px 20px 10px; 
-    /* margin-left: 200px; */
+    margin-left: 250px;
     height: 100%
 }
 
 .nlink{
     color: midnightblue !important
+}
+
+#canvas_id{
+    width: 100%;
 }

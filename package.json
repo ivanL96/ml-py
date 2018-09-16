@@ -1,0 +1,19 @@
+{
+  "name": "ml-py",
+  "version": "1.0.0",
+  "description": "ml-py",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivanL96/ml-py.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ivanL96/ml-py/issues"
+  },
+  "homepage": "https://github.com/ivanL96/ml-py#readme"
+}
