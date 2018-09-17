@@ -52,7 +52,7 @@ ROOT_URLCONF = 'mlproject.urls'
 
 import mlproject as proj
 
-PROJECT_DIR =  os.path.dirname(os.path.dirname(os.path.realpath(proj.__file__)))
+PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.realpath(proj.__file__)))
 
 TEMPLATES = [
     {

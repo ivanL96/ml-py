@@ -7,6 +7,7 @@ from django.contrib.auth.models import User
 from django.template.loader import get_template
 import base64
 
+
 def main_view(request):
     template = 'base.html'
     if request.method == 'POST':
