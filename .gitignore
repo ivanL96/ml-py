@@ -2,3 +2,5 @@
 env/
 
 mlproject/mlproject/__pycache__/
+
+*.pyc
