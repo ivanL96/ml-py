@@ -1,32 +1,48 @@
-import numpy
+import numpy as np
+from mlproject.mlproject.network import NeuralNetwork
 
-w1 = 0.2171294043719473 #numpy.random.randn()
-w2 = 0.17060917370939727 #numpy.random.randn()
-bias = -1.1727945652392069 #numpy.random.randn()
-m1 = int(input("measure 1:  "))
+# w1 = 0.2171294043719473 #numpy.random.randn()
+# w2 = 0.17060917370939727 #numpy.random.randn()
+# bias = -1.1727945652392069 #numpy.random.randn()
+# m1 = int(input("measure 1:  "))
 
-data = 5
+# data = 5
 
-def sigmoid(x):
-    return 1/(1 + numpy.exp(-x))
+# def sigmoid(x):
+#     return 1/(1 + numpy.exp(-x))
 
-def neuron(m1, w1, bias):
-    return sigmoid(m1 * w1 + bias)
+# def neuron(m1, w1, bias):
+#     return sigmoid(m1 * w1 + bias)
 
-def cost(prediction, target):
-    return (prediction - target)**2
+# def cost(prediction, target):
+#     return (prediction - target)**2
 
-def slope(prediction, target):
-    return (prediction - data)*2
+# def slope(prediction, target):
+#     return (prediction - data)*2
 
-prediction = neuron(m1, w1, bias)
-diff = cost(prediction, data)
-s = slope(prediction, data)
+# prediction = neuron(m1, w1, bias)
+# diff = cost(prediction, data)
+# s = slope(prediction, data)
 
-print('prediction: {}'.format(prediction))
-print('diff: {}'.format(diff))
-print('slope: {}'.format(s))
+# print('prediction: {}'.format(prediction))
+# print('diff: {}'.format(diff))
+# print('slope: {}'.format(s))
 
-for i in range(1000):
-    prediction = prediction - .1 * slope(prediction, data)
-print(prediction)
+# for i in range(1000):
+#     prediction = prediction - .1 * slope(prediction, data)
+# print(prediction)
+
+
+if __name__ == "__main__":
+    features = np.array([[0, 0, 1],
+                         [0, 1, 1],
+                         [1, 0, 1],
+                         [1, 1, 1]])
+    labels = np.array([[0], [1], [1], [0]])
+    nn = NeuralNetwork(features, labels)
+
+    for i in range(1500):
+        nn.feedforward()
+        nn.backprop()
+
+    print(nn.output)
